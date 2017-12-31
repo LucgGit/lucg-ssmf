@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="login.log">
+
+    <insert id="saveLoginLog" parameterType="com.lucg.ssmf.entity.user.UserLoginLogEntity"
+        useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user_login_log(
+            user_code,
+            user_name,
+            user_ip,
+            session_id,
+            login_status
+        )
+        VALUES
+        (
+            #{userCode},
+            #{userName},
+            #{userIp},
+            #{sessionId},
+            #{loginStatus}
+        )
+    </insert>
+
+    <update id="saveLogOutTime" parameterType="Map">
+        UPDATE
+            user_login_log 
+        SET
+            logout_time = NOW()
+        WHERE
+            session_id = #{sessionId} AND
+            login_status = #{loginStatus}
+    </update>
+
+    <select id="selectErrLoginCount" parameterType="Map" resultType="Integer">
+        SELECT 
+            count(1)
+        FROM 
+            user_login_log
+        WHERE
+            login_status = #{loginStatus} AND
+            login_time >= DATE_SUB(now(),interval 300 SECOND) AND
+            user_code = #{userCode}
+    </select>
+
+    <select id="selectLatestLog" parameterType="Map" resultMap="userLoginLogMap">
+        SELECT
+            id,
+            user_code,
+            user_name,
+            user_ip,
+            session_id,
+            login_status,
+            login_time,
+            logout_time
+        FROM
+            user_login_log
+        WHERE
+            login_status = #{loginStatus} AND
+            user_code = #{userCode}
+        ORDER BY
+            login_time DESC LIMIT 1
+    </select>
+
+    <resultMap id="userLoginLogMap" type="com.lucg.ssmf.entity.user.UserLoginLogEntity">
+        <result property="id" column="id"></result>
+        <result property="userCode" column="user_code"></result>
+        <result property="userName" column="user_name"></result>
+        <result property="userIp" column="user_ip"></result>
+        <result property="sessionId" column="session_id"></result>
+        <result property="loginStatus" column="login_status"></result>
+        <result property="loginTime" column="login_time"></result>
+    </resultMap>
+
+</mapper>

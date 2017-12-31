@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+html,body,div,ul,li,ol,dl,dt,dd,p,img,span,input,select,em,h1,h2,h3,h4,h5,h6{margin:0;padding:0;border:0;}
+@font-face{
+    font-family:'goodNight';
+    src:url('../../font/goodNight.ttf');
+}
+body{
+    font-family:'goodNight';
+    font-size:16px;
+    color:#212121;
+}
+
+.text-danger{color:#ff002a}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<decorators defaultdir="/WEB-INF/ftl/decorators">
+
+    <excludes>
+        <pattern>/css/*</pattern>
+        <pattern>/images/*</pattern>
+        <pattern>/js/*</pattern>
+    </excludes>
+
+    <decorator name="main" page="main.ftl">
+        <pattern>/*.do</pattern>
+    </decorator>
+
+    <excludes>
+        <pattern>/index.do*</pattern>
+        <pattern>/regist.do*</pattern>
+        <pattern>/showRegist.do*</pattern>
+        <pattern>/reLogin.do*</pattern>
+    </excludes>
+</decorators>

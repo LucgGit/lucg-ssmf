@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+html,body{ height: 100%;}
+a:link,a:visited,a:hover,a:active{ text-decoration: none; color: #09c;}
+a:hover{ color: #0061a6; }
+li{ list-style-type: none;}
+
+.control-form{ width : 280px; margin:20px auto}
+.control-form li{ clear: both; zoom: 1; position: relative; *height: 65px !important;}
+.control-form label{ width: 38px; height: 38px; border: 1px solid #ccc; background: #ddd; display: inline-block; float: left; margin-bottom: 30px; border-radius: 3px 0 0 3px;}
+.control-form input{ border: 1px solid #ccc; height: 40px; padding: 0 9px; display: inline-block; float: left; margin-left: -1px; width: 241px; margin-bottom: 0; border-radius: 0 3px 3px 0; color: #555;}
+.control-form i{ width: 30px; height: 30px; background: url(../../img/icons.png) 0 0 no-repeat; display: inline-block; float: left;}
+.control-form .a-icon-name{ background-position: 0px -58px; margin-top: 4px; margin-left: 4px; }
+.control-form .a-icon-pwd{ background-position: -30px -58px; margin-top: 4px; margin-left: 4px;}
+.control-form .a-btn{}
+.control-form .a-btn a{ width: 100%; height: 50px; background: #800080; color: #fff; line-height: 50px; display: block; text-align: center; border-radius: 3px; font-size: 17px; }
+.control-form .a-btn a:hover{ background: #800040; }
+.control-form .a-links{ text-align: right; padding: 15px 0 10px; *padding: 5px 0 5px !important; *height: 30px !important; }
+.control-form .a-msg-err{ text-align: center; color: #f00; line-height: 30px; padding: 5px 0; height: 30px; overflow: hidden; }
+.control-form .a-links{ text-align: right; padding: 15px 0 10px; *padding: 5px 0 5px !important; *height: 30px !important; }

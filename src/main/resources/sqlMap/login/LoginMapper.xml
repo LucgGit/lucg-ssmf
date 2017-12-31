@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="login">
+
+    <insert id="registUserBaseInfo" parameterType="com.lucg.ssmf.entity.user.UserInfoEntity"
+        useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user_info(
+            user_code,
+            user_name,
+            user_pwd,
+            user_type,
+            active_flag
+        )
+        VALUES
+        (
+            #{userCode},
+            #{userName},
+            #{userPwd},
+            #{userType},
+            #{activeFlag}
+        )
+    </insert>
+
+    <select id="findUserByPassword" parameterType="com.lucg.ssmf.entity.user.UserInfoEntity"
+        resultMap="userInfoMap">
+        SELECT
+            id,
+            user_code,
+            user_name,
+            user_pwd,
+            user_type,
+            active_flag,
+            create_time,
+            update_time
+        FROM
+            user_info
+        WHERE
+            user_code = #{userCode} AND
+            user_pwd = #{userPwd} AND
+            active_flag = #{activeFlag}
+    </select>
+
+    <select id="queryUserCount" parameterType="Map" resultType="Integer">
+        SELECT
+            COUNT(user_code)
+        FROM
+            user_info
+        WHERE
+            user_code = #{userCode} AND
+            active_flag = #{activeFlag}
+    </select>
+
+    <resultMap id="userInfoMap" type="com.lucg.ssmf.entity.user.UserInfoEntity">
+        <result property="id" column="id"></result>
+        <result property="userCode" column="user_code"></result>
+        <result property="userName" column="user_name"></result>
+        <result property="userPwd" column="user_pwd"></result>
+        <result property="userType" column="user_type"></result>
+        <result property="activeFlag" column="active_flag"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="updateTime" column="update_time"></result>
+    </resultMap>
+</mapper>
