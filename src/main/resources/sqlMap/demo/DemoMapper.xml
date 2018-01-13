@@ -26,6 +26,13 @@
         <if test='userCode != null and userCode !=""'>
             AND user_code=#{userCode}
         </if>
+        <if test='createStartTime != null and createStartTime !=""'>
+            AND DATE_FORMAT(create_time,'%Y-%m-%d') <![CDATA[>=]]> #{createStartTime}
+        </if>
+        <if test='createEndTime != null and createEndTime !=""'>
+            AND DATE_FORMAT(create_time,'%Y-%m-%d') <![CDATA[<=]]> #{createEndTime}
+        </if>
+        ORDER BY create_time
     </select>
 
     <resultMap id="userInfoListMap" type="com.lucg.ssmf.entity.user.UserInfoEntity">

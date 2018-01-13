@@ -1,13 +1,99 @@
 @CHARSET "UTF-8";
-html,body,div,ul,li,ol,dl,dt,dd,p,img,span,input,select,em,h1,h2,h3,h4,h5,h6{margin:0;padding:0;border:0;}
-@font-face{
-    font-family:'goodNight';
-    src:url('../../font/goodNight.ttf');
-}
-body{
-    font-family:'goodNight';
-    font-size:16px;
-    color:#212121;
+
+html,body,div,ul,li,ol,dl,dt,dd,p,img,span,input,select,em,h1,h2,h3,h4,h5,h6 {
+	margin: 0; padding: 0; border: 0;
 }
 
-.text-danger{color:#ff002a}
+body {
+	font-family: 'goodNight'; font-size: 16px; color: #212121;
+}
+
+/*字体*/
+@font-face {
+	font-family: 'goodNight'; src: url('../../font/goodNight.ttf');
+}
+
+/*分页*/
+.pages {
+	float: right; padding-bottom: 10px; padding-right: 3px;
+}
+
+.pages a,.pages a:visited,.pages span,.pages div {
+	position: relative; display: inline; float: left; margin-right: 4px; color: #333; font-size: 12px;
+}
+
+.pages span {
+	font-size: 12px;
+}
+
+.pages div {
+	line-height: 24px; padding-left: 30px; overflow: hidden;
+}
+
+.pages a,.pages a:visited {
+	height: 24px; line-height: 24px; padding: 0 8px; text-align: center; background: #fff; border: 1px solid #d7d7d7; border-radius: 4px 4px 4px 4px;
+}
+
+.pages a.current {
+	color: #f60;
+}
+
+.pages a.current:visited {
+	_color: #f60;
+}
+
+.pages a.prev,.pages a.next,.pages a.prev,.pages a.next:visited {
+	display: inline-block; width: 68px; height: 24px; line-height: 24px; line-height: 28px\9; _line-height: 24px; padding: 0; overflow: hidden;
+}
+
+.pages a.prev,.pages span.prev {
+	text-indent: 6px;
+}
+
+.pages a.next,.pages span.next {
+	text-indent: -6px;
+}
+
+.pages span.prev,.pages span.next {
+	display: inline; float: left; width: 68px; height: 24px; line-height: 24px; line-height: 28px\9; _line-height: 24px; color: #b1b1b1; text-align: center; background: #fff; border: 1px solid #d7d7d7; border-radius: 4px 4px 4px 4px;
+}
+
+.pages b {
+	position: absolute; width: 0; height: 0; line-height: 0; margin-top: -2px; + margin-top: -3px; font-size: 0; border-width: 5px; border-style: solid; border-color: #fff #333 #fff #fff;
+}
+
+.pages a.prev b {
+	left: 1px; top: 10px;
+}
+
+.pages a.next b {
+	right: 1px; top: 10px; border-color: #fff #fff #fff #333;
+}
+
+.pages span.prev b {
+	left: 1px; top: 10px; border-color: #fff #b1b1b1 #fff #fff;
+}
+
+.pages span.next b {
+	right: 1px; top: 10px; border-color: #fff #fff #fff #b1b1b1;
+}
+
+.pages div input {
+	width: 32px; height: 24px; line-height: 24px; margin: 0 3px; text-align: center; + vertical-align: middle; border: 1px solid #d7d7d7;
+}
+
+.pages div input.pagesubmit {
+	cursor: pointer; width: 45px; height: 26px; color: #333; line-height: 26px; _line-height: 20px; background: #fff; border-radius: 4px 4px 4px 4px;
+}
+
+.pages a:hover {
+	color: #f60;
+}
+
+.changePage .pages li {
+	float: left;
+}
+
+.text-danger {
+	color: #ff002a
+}

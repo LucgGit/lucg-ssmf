@@ -2,12 +2,15 @@ package com.lucg.ssmf.controller.login;
 
 import com.lucg.ssmf.constant.CommonConst;
 import com.lucg.ssmf.constant.FtlUrlConst;
+import com.lucg.ssmf.constant.MessageConst;
 import com.lucg.ssmf.constant.RequestUrlConst;
 import com.lucg.ssmf.entity.user.UserInfoEntity;
 import com.lucg.ssmf.entity.user.UserLoginLogEntity;
 import com.lucg.ssmf.service.login.ILoginLogService;
 import com.lucg.ssmf.service.login.ILoginService;
 import com.lucg.ssmf.type.LoginStatus;
+import com.lucg.ssmf.util.common.LanguageUtil;
+import com.lucg.ssmf.util.common.MessageUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,6 +43,12 @@ public class LoginController {
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         ModelAndView mv = new ModelAndView();
 
+        // 根据本机环境设置默认语言信息
+        if (null == session.getAttribute(CommonConst.SESSION_KEY_LANGUAGE)) {
+            String locale = request.getLocale().toString();
+            LanguageUtil.setLanguage(request, response, locale);
+        }
+
         UserInfoEntity loginUser = (UserInfoEntity) session.getAttribute(CommonConst.SESSION_KEY_LOGIN_USER);
 
         // ----------已登录----------
@@ -65,7 +74,7 @@ public class LoginController {
         }
         // 账户封锁
         if (loginLogService.selectErrLoginCount(userCode) > CommonConst.ERR_COUNT) {
-            mv.addObject("errorMsg", "该账户连续" + CommonConst.ERR_COUNT + "次登录失败,请稍后再试!");
+            mv.addObject("errorMsg", MessageUtil.getMessage(request, MessageConst.MSG_LOGIN_001, CommonConst.ERR_COUNT));
             mv.setViewName(FtlUrlConst.URL_INDEX);
             return mv;
         }
@@ -88,7 +97,7 @@ public class LoginController {
         // 保存用户登录失败日志
         loginLogService.saveLoginLog(createLoginLog(request, session, userInfo, LoginStatus.FAIL));
         // 登录验证失败
-        mv.addObject("errorMsg", "用户名或密码不正确,请重新输入!");
+        mv.addObject("errorMsg", MessageUtil.getMessage(request, MessageConst.MSG_LOGIN_002, CommonConst.ERR_COUNT));
         mv.setViewName(FtlUrlConst.URL_INDEX);
         return mv;
     }

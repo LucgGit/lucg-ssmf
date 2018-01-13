@@ -2,6 +2,7 @@ package com.lucg.ssmf.dao.demo.impl;
 
 import com.lucg.ssmf.dao.demo.IDemoDao;
 import com.lucg.ssmf.entity.user.UserInfoEntity;
+import com.lucg.ssmf.util.db.Limit;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class DemoDaoImplTest extends AbstractJUnit4SpringContextTests {
 
     @Test
     public void test1() {
-        List<UserInfoEntity> userInfoList = demoDao.getUserInfo(new UserInfoEntity());
+        List<UserInfoEntity> userInfoList = demoDao.getUserInfo(new UserInfoEntity(),new Limit());
         System.out.println("JUnit测试结果：" + userInfoList);
         logger.info("JUnit测试结果：" + userInfoList);
     }

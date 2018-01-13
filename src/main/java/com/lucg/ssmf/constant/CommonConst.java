@@ -13,4 +13,8 @@ public class CommonConst {
 
     // 允许登录失败次数
     public static final int ERR_COUNT = 5;
+
+    // 保存在session中的语言信息key
+    public static final String SESSION_KEY_LANGUAGE = "language";
+
 }

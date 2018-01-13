@@ -3,6 +3,7 @@ package com.lucg.ssmf.service.demo.impl;
 import com.lucg.ssmf.dao.demo.IDemoDao;
 import com.lucg.ssmf.entity.user.UserInfoEntity;
 import com.lucg.ssmf.service.demo.IDemoService;
+import com.lucg.ssmf.util.db.Limit;
 
 import java.util.List;
 
@@ -16,8 +17,8 @@ public class DemoServiceImpl implements IDemoService {
     IDemoDao demoDao;
 
     @Override
-    public List<UserInfoEntity> getUserInfo(UserInfoEntity userInfo) {
-        return demoDao.getUserInfo(userInfo);
+    public List<UserInfoEntity> getUserInfo(UserInfoEntity userInfo, Limit limit) {
+        return demoDao.getUserInfo(userInfo, limit);
     }
 
 }

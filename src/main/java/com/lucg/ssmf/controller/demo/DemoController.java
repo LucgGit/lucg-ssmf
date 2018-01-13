@@ -3,6 +3,7 @@ package com.lucg.ssmf.controller.demo;
 import com.lucg.ssmf.entity.demo.DemoSearchEntity;
 import com.lucg.ssmf.entity.user.UserInfoEntity;
 import com.lucg.ssmf.service.demo.IDemoService;
+import com.lucg.ssmf.util.db.Limit;
 
 import java.util.List;
 
@@ -25,10 +26,11 @@ public class DemoController {
     IDemoService demoService;
 
     @RequestMapping("main.do")
-    public ModelAndView main(HttpServletRequest request, HttpServletResponse response, DemoSearchEntity searchCondition) {
+    public ModelAndView main(HttpServletRequest request, HttpServletResponse response,
+            DemoSearchEntity searchCondition, Limit limit) {
         ModelAndView mv = new ModelAndView();
         logger.info("开始查询用户信息。");
-        List<UserInfoEntity> userList = demoService.getUserInfo(searchCondition);
+        List<UserInfoEntity> userList = demoService.getUserInfo(searchCondition, limit);
         mv.addObject("condition", searchCondition);
         mv.addObject("userList", userList);
         mv.setViewName("/demo/demo.ftl");

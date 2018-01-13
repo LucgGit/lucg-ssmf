@@ -77,6 +77,8 @@ public class AuthFilter implements Filter {
         whiteList.add(RequestUrlConst.REQUEST_REGIST);
         whiteList.add(RequestUrlConst.REQUEST_RELOGIN);
         whiteList.add(RequestUrlConst.REQUEST_QUERY_USER_CODE);
+        whiteList.add(RequestUrlConst.REQUEST_ABOUT);
+        whiteList.add(RequestUrlConst.REQUEST_LOCALE_CHANGE);
 
     }
 

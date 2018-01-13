@@ -42,6 +42,7 @@
             <map>
                 <entry key="baseDir" value="@{baseDir}" />
                 <entry key="version" value="@{version}" />
+                <entry key="baseImg" value="@{baseImg}" />
             </map>
         </property>
         <property name="defaultEncoding" value="utf-8" />

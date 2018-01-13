@@ -11,4 +11,6 @@ public class FtlUrlConst {
 
     public static final String URL_RELOGIN = "/reLogin.ftl";
 
+    public static final String URL_ABOUT = "/addition/about.ftl";
+
 }

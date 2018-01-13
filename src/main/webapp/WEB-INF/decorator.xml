@@ -17,5 +17,6 @@
         <pattern>/regist.do*</pattern>
         <pattern>/showRegist.do*</pattern>
         <pattern>/reLogin.do*</pattern>
+        <pattern>/about.do*</pattern>
     </excludes>
 </decorators>

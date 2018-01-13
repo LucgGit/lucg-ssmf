@@ -9,7 +9,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class LoginLogDaoImpl extends BaseDao implements ILoginLogDao {
+public class LoginLogDaoImpl extends BaseDao<UserLoginLogEntity> implements ILoginLogDao {
 
     public static final String NAMESPACE = "login.log.";
 

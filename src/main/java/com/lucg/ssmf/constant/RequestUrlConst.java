@@ -17,4 +17,8 @@ public class RequestUrlConst {
 
     public static final String REQUEST_QUERY_USER_CODE = "/queryUserCode.do";
 
+    public static final String REQUEST_ABOUT = "/about.do";
+
+    public static final String REQUEST_LOCALE_CHANGE = "/locale/change.do";
+
 }

@@ -15,5 +15,5 @@ li{ list-style-type: none;}
 .control-form .a-btn a{ width: 100%; height: 50px; background: #800080; color: #fff; line-height: 50px; display: block; text-align: center; border-radius: 3px; font-size: 17px; }
 .control-form .a-btn a:hover{ background: #800040; }
 .control-form .a-links{ text-align: right; padding: 15px 0 10px; *padding: 5px 0 5px !important; *height: 30px !important; }
-.control-form .a-msg-err{ text-align: center; color: #f00; line-height: 30px; padding: 5px 0; height: 30px; overflow: hidden; }
+.control-form .a-msg-err{ text-align: center; color: #f00; padding: 5px 0; height: 30px; overflow: hidden; }
 .control-form .a-links{ text-align: right; padding: 15px 0 10px; *padding: 5px 0 5px !important; *height: 30px !important; }
