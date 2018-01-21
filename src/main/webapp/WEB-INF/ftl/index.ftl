@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Login</title>
 <link rel="stylesheet" href="${baseDir}/static/css/common/common.css?v=${version}">
 <link rel="stylesheet" href="${baseDir}/static/common/aos/aos.css?v=${version}">
-<link rel="stylesheet" href="${baseDir}/static/common/layui/css/layui.css?v=${version}">
 <link rel="stylesheet" href="${baseDir}/static/css/login/login.css?v=${version}">
 <script type="text/javascript" src="${baseDir}/static/js/common/jquery-1.8.3.min.js?v=${version}"></script>
 <script type="text/javascript">
@@ -14,7 +14,7 @@
 </head>
 <body>
     <div style="position:absolute; z-index:2;margin:0 auto;left:40%;">
-    <div class="layui-anim layui-anim-up control-form">
+    <div class="control-form div-login">
         <@languageSelector/>
         <hr/>
         <form id="loginForm" name="loginForm" action="${baseDir}/index.do" method="post">
@@ -32,19 +32,20 @@
                     <a href="javascript:login_index.login();" tabindex="3"><@spring.message "index.login"/></a>
                 </li>
                 <li class="a-links">
-                    <a href="javascript:regist_index.showRegist('${baseDir}');" tabindex="4"><@spring.message "index.regist"/></a>
+                    <a href="javascript:regist_index.showRegist();" tabindex="4"><@spring.message "index.regist"/></a>
                 </li>
             </ul>
         </form>
     </div>
-    <div class="layui-anim layui-anim-scale">
+    <div class="fade-in">
         <a href="${baseDir}/addition/about.do"><@spring.message "index.about"/></a>
     </div>
     </div>
-    <script type="text/javascript" src="${baseDir}/static/common/layui/layui.all.js?v=${version}"></script>
+    <script type="text/javascript" src="${baseDir}/static/js/common/jquery.placeholder.min.js?v=${version}"></script>
+    <script type="text/javascript" src="${baseDir}/static/js/common/common.js?v=${version}"></script>
+    <script type="text/javascript" src="${baseDir}/static/common/layer/layer.js?v=${version}"></script>
     <script type="text/javascript" src="${baseDir}/static/js/common/three.min.js?v=${version}"></script>
     <script type="text/javascript" src="${baseDir}/static/js/effect/bg-login.js?v=${version}"></script>
     <script type="text/javascript" src="${baseDir}/static/js/login/login_${language}.js?v=${version}"></script>
-    <script type="text/javascript" src="${baseDir}/static/js/common/common.js?v=${version}"></script>
 </body>
 </html>

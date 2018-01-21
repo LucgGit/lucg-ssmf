@@ -4,12 +4,12 @@
 <#import "../common/spring.ftl" as spring>
 <head>
 <title>${title}</title>
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="expires" content="0" />
-<link rel="stylesheet" href="${base}/static/common/layui/css/layui.css">
+<link rel="stylesheet" href="${base}/static/common/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="${base}/static/css/common/common.css">
 <script type="text/javascript" src="${base}/static/js/common/jquery-1.8.3.min.js"></script>
 ${head}
@@ -37,7 +37,8 @@ ${head}
                 <a href="${base}/addition/about.do" target="_blank"><@spring.message "main.href.about"/></a>
             </span>
         </div>
-        <script type="text/javascript" src="${base}/static/common/layui/layui.all.js"></script>
+        <script type="text/javascript" src="${base}/static/js/common/jquery.placeholder.min.js"></script>
+        <script type="text/javascript" src="${base}/static/js/common/common.js"></script>
         ${body}
     </div>
     <script type="text/javascript" src="${base}/static/js/common/TweenLite.min.js"></script>

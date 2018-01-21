@@ -1,5 +1,3 @@
-var laydate = layui.laydate;
-
 laydate.render({
 	elem : '#createStartTime'
 });

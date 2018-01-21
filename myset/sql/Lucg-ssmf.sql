@@ -8,7 +8,8 @@ CREATE TABLE `user_info` (
   `active_flag` varchar(2) NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_info_user_code_index` (`user_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 INSERT INTO `user_info`(`user_code`,`user_name`,`user_pwd`,`user_type`,`active_flag`) values ('test','盧','fd869d4a3547b82b2d2adae95d85e09a','1','1');
@@ -24,7 +25,8 @@ CREATE TABLE `user_login_log` (
   `login_status` varchar(2) DEFAULT NULL,
   `login_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `logout_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_login_log_user_code_index` (`user_code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1000000 DEFAULT CHARSET=utf8;
 
 
@@ -40,7 +42,9 @@ CREATE TABLE `img_info` (
   `aos_effect` varchar(100) COMMENT 'aos动画效果显示',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `img_info_img_code_index` (`img_code`),
+  KEY `img_info_img_type_index` (`img_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 INSERT INTO `img_info`(`img_code`,`img_name`,`img_type`,`img_order`,`img_path`,`img_remark`,`aos_effect`) values ('IMG00001','about_01.jpg','I001',0,'static/img/I001/about_01.jpg','fade-up','aos=\"fade-up\"');

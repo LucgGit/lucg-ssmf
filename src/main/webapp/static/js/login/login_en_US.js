@@ -17,14 +17,13 @@ var login_index = {
 }
 
 var regist_index = {
-	showRegist : function(baseDir) {
-		var layer = layui.layer;
+	showRegist : function() {
 		layer.open({
 			type : 2,
 			title : 'Regist',
 			fixed : false,
 			maxmin : false,
-			area : [ '500px', '600px' ],
+			area : [ '450px', '600px' ],
 			content : baseDir + '/showRegist.do'
 		});
 	}
