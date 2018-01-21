@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("addition")
 public class AboutController {
 
     @Autowired
@@ -28,6 +28,13 @@ public class AboutController {
         mv.addObject("imgInfoList", imgInfoList);
 
         mv.setViewName(FtlUrlConst.URL_ABOUT);
+        return mv;
+    }
+
+    @RequestMapping("detail.do")
+    public ModelAndView detail() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName(FtlUrlConst.URL_DETAIL);
         return mv;
     }
 }

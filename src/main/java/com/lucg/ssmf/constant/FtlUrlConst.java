@@ -15,4 +15,6 @@ public class FtlUrlConst {
 
     public static final String URL_FORUM = "/forum/main.ftl";
 
+    public static final String URL_DETAIL = "/addition/detail.ftl";
+
 }

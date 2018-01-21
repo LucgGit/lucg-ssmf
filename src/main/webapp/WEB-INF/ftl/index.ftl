@@ -38,7 +38,7 @@
         </form>
     </div>
     <div class="layui-anim layui-anim-scale">
-        <a href="${baseDir}/about.do"><@spring.message "index.about"/></a>
+        <a href="${baseDir}/addition/about.do"><@spring.message "index.about"/></a>
     </div>
     </div>
     <script type="text/javascript" src="${baseDir}/static/common/layui/layui.all.js?v=${version}"></script>

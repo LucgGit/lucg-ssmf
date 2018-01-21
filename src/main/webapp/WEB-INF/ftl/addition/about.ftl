@@ -28,7 +28,7 @@
                 <#else>
                     <div class="pic pic-left" <#if item.aosEffect??>${item.aosEffect}</#if>>
                 </#if>
-                        <img src="${baseImg}" data-original="${item.imgPath}"/>
+                        <img src="${baseImg}" data-original="${baseDir}/${item.imgPath}"/>
                         <div class="pic-text"><#if item.imgRemark??>${item.imgRemark}</#if></div>
                     </div>
             </#list>

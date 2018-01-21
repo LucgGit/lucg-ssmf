@@ -32,7 +32,9 @@ ${head}
                 <span style="margin-left:10px;margin-right:10px;">|</span>
                 <a href="${base}/forum/main.do"><@spring.message "main.href.forum"/></a>
                 <span style="margin-left:10px;margin-right:10px;">|</span>
-                <a href="${base}/about.do" target="_blank"><@spring.message "main.href.about"/></a>
+                <a href="${base}/addition/detail.do" target="_blank"><@spring.message "main.href.detail"/></a>
+                <span style="margin-left:10px;margin-right:10px;">|</span>
+                <a href="${base}/addition/about.do" target="_blank"><@spring.message "main.href.about"/></a>
             </span>
         </div>
         <script type="text/javascript" src="${base}/static/common/layui/layui.all.js"></script>
